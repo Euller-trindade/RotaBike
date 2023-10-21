@@ -1,0 +1,69 @@
+.container__bicicletas {
+  padding: 100px 50px;
+  display: flex;
+  justify-content: center;
+  background-color: #676767;
+}
+.heart {
+  font-size: 1.5rem;
+  top: 5px;
+  left: 5px;
+  position: absolute;
+  color: rgb(198, 0, 0);
+  cursor: pointer;
+}
+.container__bicicletas img {
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+}
+.container__card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  width: 300px;
+  overflow: hidden;
+}
+.card h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: #676767;
+  font-size: 1rem;
+}
+.card p,
+.card h4 {
+  font-weight: bold;
+  margin-left: 20px;
+}
+.price {
+  font-size: 1.3rem;
+}
+.parcelas {
+  font-size: 0.8rem;
+}
+.card h4 {
+  color: #238d00;
+}
+.card button {
+  border: none;
+  background-color: #79d904;
+  padding: 15px 0;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.card button:hover {
+  background-color: #124800;
+}

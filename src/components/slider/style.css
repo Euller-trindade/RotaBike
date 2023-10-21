@@ -1,0 +1,20 @@
+.container__slider {
+  height: 80vh;
+  margin-bottom: 30px;
+}
+.img__slide {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  object-position: 80%;
+}
+.description {
+  position: absolute;
+  width: 300px;
+  top: 50%;
+  left: 4rem;
+  font-size: 2rem;
+  color: #79d904;
+}
