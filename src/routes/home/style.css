@@ -61,3 +61,11 @@
     width: 100%;
   }
 }
+@media (max-width: 480px) {
+  .section__home img {
+    height: auto;
+  }
+  .div__button button a {
+    padding: 10px 20px;
+  }
+}
