@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdOutlineDirectionsBike, MdOutlineShoppingCart } from "react-icons/md";
 import "./style.css";
+import { BikeContext } from "../../context/BikeContext";
+import { motion } from "framer-motion";
 
 function NavBar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("nav__menu");
   const [icon, setIcon] = useState("nav__toggler");
+  const { itemCart } = useContext(BikeContext);
   const navToggle = () => {
     if (active === "nav__menu") {
       setActive("nav__menu nav__active");
@@ -34,9 +37,13 @@ function NavBar() {
   }, []);
   return (
     <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
-      <h2>
+      <motion.h2
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         RotaBike <MdOutlineDirectionsBike />
-      </h2>
+      </motion.h2>
       <ul className={active}>
         <li className="nav__item">
           <NavLink
@@ -84,18 +91,29 @@ function NavBar() {
         </li>
       </ul>
       <div className="container__cart_menu">
-        <p className="cart">
+        <motion.p
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="cart"
+        >
           <Link to="/cart">
             <MdOutlineShoppingCart />
           </Link>
-          <span>10</span>
-        </p>
+          <span>{itemCart}</span>
+        </motion.p>
 
-        <div onClick={navToggle} className={icon}>
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          onClick={navToggle}
+          className={icon}
+        >
           <div className="line1"></div>
           <div className="line2"></div>
           <div className="line3"></div>
-        </div>
+        </motion.div>
       </div>
     </nav>
   );

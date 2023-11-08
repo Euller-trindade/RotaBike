@@ -1,9 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import caloriElite from "../../assets/caloi elite aluminio.png";
-import calori from "../../assets/caloi.png";
-import tswHurry from "../../assets/tsw hurry rs.png";
-import tsw from "../../assets/tsw.png";
+import { motion } from "framer-motion";
 import "./style.css";
 
 const Slider = () => {
@@ -44,8 +41,22 @@ const Slider = () => {
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
-            <img src={item.image} alt="bikes" className="img__slide" />
-            <h2 className="description">{item.description}</h2>
+            <motion.img
+              initial={{ y: 1000 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1 }}
+              src={item.image}
+              alt="bikes"
+              className="img__slide"
+            />
+            <motion.h2
+              initial={{ x: -100 }}
+              animate={{ x: 0 }}
+              className="description"
+              transition={{ duration: 1 }}
+            >
+              {item.description}
+            </motion.h2>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import Slider from "../../components/slider";
-import Footer from "../../components/footer";
 
 const Home = () => {
   return (

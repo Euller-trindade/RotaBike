@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import "swiper/css/pagination";
 import Cart from "./routes/cart";
+import { BikeProvider } from "./context/BikeContext";
 register();
 
 const router = createBrowserRouter([
@@ -47,6 +48,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BikeProvider>
+      <RouterProvider router={router} />
+    </BikeProvider>
   </React.StrictMode>
 );
