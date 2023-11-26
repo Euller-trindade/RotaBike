@@ -5,6 +5,7 @@ import whatsapp from "../../assets/whatsapp.png";
 import instagram from "../../assets/instagram.png";
 import twitter from "../../assets/twitter.png";
 import facebook from "../../assets/facebook.png";
+import { motion } from "framer-motion";
 const Contato = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -40,7 +41,13 @@ const Contato = () => {
         </div>
       )}
       <div className="container__contato">
-        <form className="form" onSubmit={sendMessage}>
+        <motion.form
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="form"
+          onSubmit={sendMessage}
+        >
           <div className="form__content">
             <h1>Contate-nos</h1>
             <div className="nome__email">
@@ -84,7 +91,7 @@ const Contato = () => {
             alt=""
             className="background"
           />
-        </form>
+        </motion.form>
         <div className="redes">
           <img src={whatsapp} alt="" />
           <img src={instagram} alt="" />

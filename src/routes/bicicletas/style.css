@@ -1,5 +1,5 @@
 .container__bicicletas {
-  padding: 100px 50px;
+  padding: 100px 0;
   display: flex;
   justify-content: center;
   background-color: #676767;
@@ -12,6 +12,7 @@
 }
 .container__card {
   display: flex;
+  padding: 0 10px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;

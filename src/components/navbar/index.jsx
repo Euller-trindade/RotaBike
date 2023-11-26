@@ -30,7 +30,6 @@ function NavBar() {
       }
     };
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -45,7 +44,12 @@ function NavBar() {
         RotaBike <MdOutlineDirectionsBike />
       </motion.h2>
       <ul className={active}>
-        <li className="nav__item">
+        <motion.li
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="nav__item"
+        >
           <NavLink
             to={"/"}
             className={({ isActive }) =>
@@ -55,8 +59,13 @@ function NavBar() {
           >
             Home
           </NavLink>
-        </li>
-        <li className="nav__item">
+        </motion.li>
+        <motion.li
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1.2 }}
+          className="nav__item"
+        >
           <NavLink
             to={"/bicicletas"}
             className={({ isActive }) =>
@@ -66,8 +75,13 @@ function NavBar() {
           >
             Bicicletas
           </NavLink>
-        </li>
-        <li className="nav__item">
+        </motion.li>
+        <motion.li
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1.4 }}
+          className="nav__item"
+        >
           <NavLink
             to={"/sobre"}
             className={({ isActive }) =>
@@ -77,8 +91,13 @@ function NavBar() {
           >
             sobre
           </NavLink>
-        </li>
-        <li className="nav__item">
+        </motion.li>
+        <motion.li
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1.6 }}
+          className="nav__item"
+        >
           <NavLink
             to={"/contato"}
             className={({ isActive }) =>
@@ -88,7 +107,7 @@ function NavBar() {
           >
             Contato
           </NavLink>
-        </li>
+        </motion.li>
       </ul>
       <div className="container__cart_menu">
         <motion.p
@@ -100,7 +119,7 @@ function NavBar() {
           <Link to="/cart">
             <MdOutlineShoppingCart />
           </Link>
-          <span>{itemCart}</span>
+          <span>{itemCart.length}</span>
         </motion.p>
 
         <motion.div

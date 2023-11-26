@@ -9,26 +9,21 @@ import Loading from "../../components/loading";
 
 const Bicicletas = () => {
   const [loading, setLoading] = useState(true);
-  const { handleCart } = useContext(BikeContext);
-  const handleValue = (valor) => {
-    const valorNumero = parseFloat(valor.replace(",", "."));
-    const resultado = valorNumero / 6;
-    const resultadoSting = String(resultado.toFixed(2));
-    return resultadoSting.replace(".", ",");
-  };
+  const { handleCart, handleValue } = useContext(BikeContext);
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
   }, []);
+
   return (
     <div className="container__bicicletas">
       {loading ? (
         <Loading />
       ) : (
         <motion.div
-          initial={{ y: 0, opacity: 0 }}
-          animate={{ y: 30, opacity: 1 }}
+          initial={{ y: 1000 }}
+          animate={{ y: 0 }}
           transition={{ duration: 1 }}
           className="container__card"
         >
@@ -37,15 +32,22 @@ const Bicicletas = () => {
               <img src={bike.foto} alt="" />
               <h1>{bike.nome}</h1>
               <p className="price">
-                R${bike.valor} <br />
+                R$
+                {parseFloat(bike.valor).toLocaleString("pt-BR", {
+                  maximumFractionDigits: 2,
+                })}
+                ,00
+                <br />
               </p>
-              <p className="parcelas">Em até 6x de {handleValue(bike.valor)}</p>
+              <p className="parcelas">
+                Em até 6x R${handleValue(bike.valor)},00
+              </p>
               <h4>Frete grátis</h4>
               <div className="card__button">
                 <button>
                   <Link to={"/cart"}>Comprar</Link>
                 </button>
-                <button onClick={handleCart}>
+                <button onClick={() => handleCart(bike)}>
                   <BsCartPlusFill />
                 </button>
               </div>
