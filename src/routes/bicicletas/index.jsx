@@ -44,7 +44,7 @@ const Bicicletas = () => {
               </p>
               <h4>Frete grátis</h4>
               <div className="card__button">
-                <button>
+                <button className="btn__comprar">
                   <Link to={"/cart"}>Comprar</Link>
                 </button>
                 <button onClick={() => handleCart(bike)}>

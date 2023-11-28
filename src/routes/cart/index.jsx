@@ -149,7 +149,7 @@ const Cart = () => {
               <p>total</p>
               <p className="total__p">R${total},00</p>
             </div>
-            <button>comprar</button>
+            <button>finalizar compra</button>
           </div>
         </div>
       )}

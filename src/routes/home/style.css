@@ -49,7 +49,7 @@
   color: #fff;
   text-decoration: none;
 }
-@media (max-width: 680px) {
+@media (max-width: 800px) {
   .section__home {
     flex-direction: column;
     align-items: center;
@@ -58,12 +58,19 @@
     width: 100%;
   }
   .section__home img {
-    width: 100%;
+    width: 80%;
   }
 }
+/* @media (max-width: 800px) {
+  .section__home {
+    flex-direction: column;
+    align-items: center;
+  }
+} */
 @media (max-width: 480px) {
   .section__home img {
     height: auto;
+    width: 100%;
   }
   .div__button button a {
     padding: 10px 20px;

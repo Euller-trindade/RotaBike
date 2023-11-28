@@ -52,8 +52,7 @@ const Home = () => {
             <p>
               O design meticuloso e o acabamento impecável de cada detalhe em
               nossas bicicletas são uma verdadeira obra de arte sobre duas
-              rodas, elevando sua experiência de pedalada a um nível de
-              sofisticação incomparável.
+              rodas.
             </p>
             <div className="div__button">
               <button>

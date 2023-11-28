@@ -91,6 +91,9 @@ li {
   }
 }
 @media screen and (max-width: 768px) {
+  .nav {
+    justify-content: space-between;
+  }
   .nav__toggler {
     display: block;
     cursor: pointer;

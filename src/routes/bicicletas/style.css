@@ -37,17 +37,21 @@
 }
 .card p,
 .card h4 {
-  font-weight: bold;
   margin-left: 20px;
 }
 .price {
+  font-weight: bold;
   font-size: 1.3rem;
 }
 .parcelas {
+  font-weight: 500;
   margin-top: -20px;
   font-size: 0.8rem;
+  color: #676767;
 }
 .card h4 {
+  margin-top: -15px;
+  font-size: 0.8rem;
   color: #238d00;
 }
 .card__button {
@@ -67,6 +71,9 @@
 .card__button button:hover {
   background-color: #124800;
 }
+.btn__comprar {
+  border-right: 2px solid #fff !important;
+}
 .card__button a {
   text-decoration: none;
   color: #fff;
@@ -74,4 +81,9 @@
 }
 .card__button svg {
   font-size: 1.2rem;
+}
+@media (max-width: 650px) {
+  .card {
+    width: 250px;
+  }
 }
