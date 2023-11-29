@@ -5,6 +5,7 @@ import whatsapp from "../../assets/whatsapp.png";
 import instagram from "../../assets/instagram.png";
 import twitter from "../../assets/twitter.png";
 import facebook from "../../assets/facebook.png";
+import contactForm from "../../assets/contact form.jpg";
 import { motion } from "framer-motion";
 const Contato = () => {
   const [name, setName] = useState("");
@@ -86,11 +87,7 @@ const Contato = () => {
               Enviar <BsSendCheckFill />
             </button>
           </div>
-          <img
-            src="https://i.pinimg.com/originals/3f/5d/bc/3f5dbc93eb119c1d22b6521ce0134255.jpg"
-            alt=""
-            className="background"
-          />
+          <img src={contactForm} alt="" className="background" />
         </motion.form>
         <div className="redes">
           <img src={whatsapp} alt="" />

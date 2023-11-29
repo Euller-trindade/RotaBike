@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import Slider from "../../components/slider";
-
+import home1 from "../../assets/home1.jpg";
+import home2 from "../../assets/home2.jpg";
+import home3 from "../../assets/home3.jpg";
 const Home = () => {
   return (
     <div className="home">
@@ -21,10 +23,7 @@ const Home = () => {
               </button>
             </div>
           </div>
-          <img
-            src="https://www.thepaddockmagazine.com/wp-content/uploads/2015/06/n-9_nh_black_01.jpg"
-            alt=""
-          />
+          <img src={home1} alt="" />
         </section>
         <section className="section__home reverse">
           <div className="div__text">
@@ -41,10 +40,7 @@ const Home = () => {
               </button>
             </div>
           </div>
-          <img
-            src="https://kolesarski-svet.si/wp-content/uploads/2020/03/URS-2020-Action-photos-46.jpg"
-            alt=""
-          />
+          <img src={home2} alt="" />
         </section>
         <section className="section__home">
           <div className="div__text">
@@ -60,10 +56,7 @@ const Home = () => {
               </button>
             </div>
           </div>
-          <img
-            src="https://i.ytimg.com/vi/-_nanlW-RxI/maxresdefault.jpg"
-            alt=""
-          />
+          <img src={home3} alt="" />
         </section>
       </div>
     </div>

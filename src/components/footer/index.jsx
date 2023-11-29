@@ -1,6 +1,7 @@
 import React from "react";
 import { MdOutlineDirectionsBike, MdEmail, MdPhone } from "react-icons/md";
 import "./style.css";
+import imgPagamento from "../../assets/metodos de pagamento.png";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -10,10 +11,7 @@ const Footer = () => {
       </h2>
       <div className="divs__footer">
         <h3>Métodos de pagamento</h3>
-        <img
-          src="https://www.viavalor.com.br/wp-content/uploads/2021/06/rodape-selos-pgtos-300x71.png"
-          alt=""
-        />
+        <img src={imgPagamento} alt="" />
       </div>
       <div className="divs__footer">
         <h3>Contato</h3>

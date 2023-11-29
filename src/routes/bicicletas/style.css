@@ -25,7 +25,7 @@
   gap: 20px;
   border-radius: 5px;
   background-color: #f3f3f3;
-  width: 300px;
+  width: 220px;
   overflow: hidden;
 }
 .card h1 {
@@ -33,7 +33,7 @@
   justify-content: center;
   margin-top: 20px;
   color: #676767;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .card p,
 .card h4 {
@@ -41,7 +41,7 @@
 }
 .price {
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 .parcelas {
   font-weight: 500;
@@ -63,7 +63,7 @@
   width: 100%;
   border: none;
   background-color: #79d904;
-  padding: 15px 0;
+  padding: 10px 0;
   cursor: pointer;
   color: #fff;
   transition: all 0.3s ease;
@@ -82,8 +82,47 @@
 .card__button svg {
   font-size: 1.2rem;
 }
-@media (max-width: 650px) {
+@media (max-width: 1050px) {
   .card {
-    width: 250px;
+    width: 195px;
+  }
+  .card h1 {
+    font-size: 0.8rem;
+    margin-top: -10px;
+  }
+  .price {
+    font-size: 0.8rem;
+  }
+  .parcelas,
+  .card h4,
+  .card__button a {
+    font-size: 0.7rem;
+  }
+  .card__button svg {
+    font-size: 0.8rem;
+  }
+  .card__button button {
+    padding: 10px 0;
+  }
+}
+@media (max-width: 630px) {
+  .card {
+    width: 150px;
+  }
+  .card h1 {
+    font-size: 0.6rem;
+    margin-top: -10px;
+  }
+  .price {
+    font-size: 0.6rem;
+  }
+  .parcelas,
+  .card h4,
+  .card__button a {
+    font-size: 0.5rem;
+  }
+  .card__button button {
+    padding: 5px 0;
+    margin-top: -10px;
   }
 }

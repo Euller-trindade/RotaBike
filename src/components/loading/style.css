@@ -7,13 +7,3 @@
   width: 100vw;
   height: 50vh;
 }
-.container__loading img {
-  height: 400px;
-  width: 400px;
-}
-.container__loading h1 {
-  position: absolute;
-  bottom: 50px;
-  color: #fff;
-  border-top: 1px solid black;
-}

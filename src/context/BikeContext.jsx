@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { getItem, setItem } from "../services/localStorage";
 
 export const BikeContext = createContext();

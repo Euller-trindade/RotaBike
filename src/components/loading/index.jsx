@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.css";
-import loading from "../../assets/loading.gif";
+import BeatLoader from "react-spinners/BeatLoader";
 const Loading = () => {
   return (
     <div className="container__loading">
-      <img src={loading} alt="" />
+      <BeatLoader color=" #ffffff" size={20} />
     </div>
   );
 };
