@@ -77,6 +77,7 @@ const Cart = () => {
           <table className="container__info_cart">
             <thead>
               <tr className="table__header">
+                <th></th>
                 <th>Produto</th>
                 <th>Quantidade</th>
                 <th>Preço</th>
@@ -88,45 +89,48 @@ const Cart = () => {
                 <tr className="item" key={index}>
                   <th className="img__cart">
                     <img src={item.foto} alt="imagem do produto" />
-                    <p>{item.nome}</p>
                   </th>
-
-                  <th>
-                    <div className="quantidade">
-                      <button
-                        onClick={() =>
-                          handleQuantidade(
-                            item.id,
-                            item.quantidade <= 1 ? 1 : item.quantidade - 1
-                          )
-                        }
-                      >
-                        <BsDashLg />
-                      </button>
-                      <p>{item.quantidade}</p>
-                      <button
-                        onClick={() =>
-                          handleQuantidade(item.id, item.quantidade + 1)
-                        }
-                      >
-                        <BsPlusLg />
-                      </button>
-                    </div>
-                  </th>
-                  <th>
-                    <p>
-                      R$
-                      {parseFloat(item.valor).toLocaleString("pt-BR")}
-                      ,00
-                    </p>
-                  </th>
-                  <th>
-                    <p>
-                      R$
-                      {handleValueTotal(item.valor, item.quantidade)}
-                      ,00
-                    </p>
-                  </th>
+                  <div className="info__mobile">
+                    <th>
+                      <p>{item.nome}</p>
+                    </th>
+                    <th>
+                      <div className="quantidade">
+                        <button
+                          onClick={() =>
+                            handleQuantidade(
+                              item.id,
+                              item.quantidade <= 1 ? 1 : item.quantidade - 1
+                            )
+                          }
+                        >
+                          <BsDashLg />
+                        </button>
+                        <p>{item.quantidade}</p>
+                        <button
+                          onClick={() =>
+                            handleQuantidade(item.id, item.quantidade + 1)
+                          }
+                        >
+                          <BsPlusLg />
+                        </button>
+                      </div>
+                    </th>
+                    <th className="valor">
+                      <p>
+                        R$
+                        {parseFloat(item.valor).toLocaleString("pt-BR")}
+                        ,00
+                      </p>
+                    </th>
+                    <th>
+                      <p>
+                        R$
+                        {handleValueTotal(item.valor, item.quantidade)}
+                        ,00
+                      </p>
+                    </th>
+                  </div>
                   <th className="del" onClick={() => removeItem(item)}>
                     <AiFillCloseCircle />
                   </th>

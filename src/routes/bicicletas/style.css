@@ -126,3 +126,32 @@
     margin-top: -10px;
   }
 }
+@media (max-width: 480px) {
+  .container__card {
+    padding: 0;
+  }
+  .card {
+    border-radius: 0;
+    width: 100%;
+  }
+  .card h1 {
+    font-size: 1rem;
+    margin-top: -10px;
+  }
+  .price {
+    font-size: 1rem;
+  }
+  .parcelas {
+    font-size: 0.8rem;
+  }
+  .card h4,
+  .card__button a {
+    font-size: 1rem;
+  }
+  .card__button svg {
+    font-size: 1rem;
+  }
+  .card__button button {
+    padding: 15px 0;
+  }
+}
