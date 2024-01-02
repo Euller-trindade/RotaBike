@@ -1,13 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./style.css";
+import { motion } from "framer-motion";
 import { BikeContext } from "../../context/BikeContext";
-import { MdOutlineShoppingCart } from "react-icons/md";
+import {
+  MdOutlineFormatListNumbered,
+  MdOutlineShoppingCart,
+} from "react-icons/md";
 import { BsDashLg, BsPlusLg, BsEmojiFrown, BsArrowLeft } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { setItem } from "../../services/localStorage";
 import { useNavigate } from "react-router-dom";
+import Checkout from "../../components/checkout";
 
 const Cart = () => {
+  const [formActive, setFormActive] = useState(false);
   const { itemCart, setItemCart } = useContext(BikeContext);
   const [total, setTotal] = useState([]);
   const navigate = useNavigate();
@@ -59,7 +65,9 @@ const Cart = () => {
       <h1>
         <MdOutlineShoppingCart /> Carrinho de compras
       </h1>
-      {itemCart.length === 0 ? (
+      {formActive ? (
+        <Checkout setFormActive={setFormActive} />
+      ) : itemCart.length === 0 ? (
         <div className="not__items">
           <h2>
             Você não tem itens em seu carrinho <BsEmojiFrown />
@@ -74,7 +82,12 @@ const Cart = () => {
         </div>
       ) : (
         <div className="container__info_resumo">
-          <table className="container__info_cart">
+          <motion.table
+            className="container__info_cart"
+            initial={{ x: -1000 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 1 }}
+          >
             <thead>
               <tr className="table__header">
                 <th></th>
@@ -137,8 +150,13 @@ const Cart = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
-          <div className="resumo">
+          </motion.table>
+          <motion.div
+            className="resumo"
+            initial={{ x: 1000 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 1 }}
+          >
             <p className="resumo__compra">resumo da compra</p>
             <div className="resumo__body">
               <div>
@@ -153,8 +171,10 @@ const Cart = () => {
               <p>total</p>
               <p className="total__p">R${total},00</p>
             </div>
-            <button>finalizar compra</button>
-          </div>
+            <button onClick={() => setFormActive(true)}>
+              finalizar compra
+            </button>
+          </motion.div>
         </div>
       )}
     </div>

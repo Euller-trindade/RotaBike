@@ -45,7 +45,9 @@ const Bicicletas = () => {
               <h4>Frete grátis</h4>
               <div className="card__button">
                 <button className="btn__comprar">
-                  <Link to={"/cart"}>Comprar</Link>
+                  <Link to={"/cart"} onClick={() => handleCart(bike)}>
+                    Comprar
+                  </Link>
                 </button>
                 <button onClick={() => handleCart(bike)}>
                   <BsCartPlusFill />

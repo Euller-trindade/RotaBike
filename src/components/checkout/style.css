@@ -1,0 +1,94 @@
+.checkout {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  padding: 30px;
+  justify-content: space-between;
+  background-color: #ffffff;
+  max-width: 650px;
+  border-radius: 5px;
+}
+.container__campos {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.container__campos label {
+  font-weight: 500;
+  font-size: 13px;
+}
+.container__campos:nth-child(1),
+.container__campos:nth-child(2) {
+  width: 100%;
+}
+.container__campos input:nth-child(1),
+.container__campos input:nth-child(2) {
+  width: 100%;
+}
+
+.container__campos input {
+  border: none;
+  background-color: rgb(215, 215, 215);
+  outline: none;
+  border-radius: 5px;
+  width: 250px;
+  margin-bottom: 20px;
+  display: flex;
+  padding: 12px 10px;
+}
+.formas__pagamentos {
+  width: 100%;
+}
+.formas__pagamentos h2 {
+  margin-bottom: 30px;
+}
+.pagamentos {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.pagamentos button {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  gap: 5px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(229, 229, 229);
+  transition: all 0.5s ease;
+}
+.pagamentos button:hover {
+  cursor: pointer;
+  background-color: rgb(59, 70, 70);
+  color: #fff;
+}
+.pix {
+  color: rgb(0, 177, 136);
+}
+
+.pagamento__footer {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  margin-bottom: -15px;
+  gap: 10px;
+}
+.pagamento__footer button {
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.cancelar {
+  background-color: red;
+}
+.confirmar {
+  background-color: #79d904;
+}
+.active {
+  background-color: rgb(59, 70, 70) !important;
+  color: #fff;
+}

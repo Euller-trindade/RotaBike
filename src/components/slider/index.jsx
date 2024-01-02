@@ -30,8 +30,6 @@ const Slider = () => {
       description: "FRETE GRÁTIS",
     },
   ];
-
-  console.log(data[0].image);
   return (
     <div className="container__slider">
       <Swiper
