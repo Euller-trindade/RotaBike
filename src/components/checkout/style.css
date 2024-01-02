@@ -44,6 +44,7 @@
 }
 .pagamentos {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -91,4 +92,22 @@
 .active {
   background-color: rgb(59, 70, 70) !important;
   color: #fff;
+}
+@media (max-width: 480px) {
+  .checkout {
+    border-radius: 0;
+  }
+}
+@media (max-width: 690px) {
+  .container__campos {
+    width: 45%;
+  }
+}
+@media (max-width: 400px) {
+  .container__campos {
+    width: 100%;
+  }
+  .pagamento__footer {
+    flex-direction: column;
+  }
 }
