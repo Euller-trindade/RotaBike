@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaPix, FaRegCreditCard, FaBarcode } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import "./style.css";
-const Checkout = ({ setFormActive }) => {
-  const [pagamentoConfirmado, setPagamentoConfirmado] = useState(false);
-  const [botaoAtivo, setBotaoAtivo] = useState(null);
+import { BikeContext } from "../../context/BikeContext";
+import { Snackbar } from "@material-ui/core";
+import MuiAlert from "@material-ui/lab/Alert";
 
+const Checkout = ({ setFormActive }) => {
+  const [botaoAtivo, setBotaoAtivo] = useState(null);
+  const { message, severity, openAlert, setOpenAlert, checkoutAlert } =
+    useContext(BikeContext);
   const handleBotaoAtivo = (botao) => {
     if (botao === botaoAtivo) {
       setBotaoAtivo(null);
@@ -16,13 +20,13 @@ const Checkout = ({ setFormActive }) => {
   const handleConfirmarPagamento = (e) => {
     e.preventDefault();
     if (botaoAtivo !== null) {
-      setPagamentoConfirmado(true);
-      setFormActive(false);
-      alert(
-        "Pagamento confirmado! Enviar formulário ou realizar ação desejada."
-      );
+      checkoutAlert("success");
+      setTimeout(() => {
+        setFormActive(false);
+        setOpenAlert(false);
+      }, 3000);
     } else {
-      alert("Por favor informe a forma de pagamento.");
+      checkoutAlert("warning");
     }
   };
 
@@ -96,6 +100,16 @@ const Checkout = ({ setFormActive }) => {
           Confirmar Pagamento
         </button>
       </div>
+      <Snackbar
+        open={openAlert}
+        autoHideDuration={3000}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+        onClose={() => setOpenAlert(false)}
+      >
+        <MuiAlert onClose={() => setOpenAlert(false)} severity={severity}>
+          {message}
+        </MuiAlert>
+      </Snackbar>
     </motion.form>
   );
 };

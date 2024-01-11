@@ -2,10 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./style.css";
 import { motion } from "framer-motion";
 import { BikeContext } from "../../context/BikeContext";
-import {
-  MdOutlineFormatListNumbered,
-  MdOutlineShoppingCart,
-} from "react-icons/md";
+import { MdOutlineShoppingCart } from "react-icons/md";
 import { BsDashLg, BsPlusLg, BsEmojiFrown, BsArrowLeft } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { setItem } from "../../services/localStorage";
@@ -59,7 +56,6 @@ const Cart = () => {
     const totalCalculado = calcularTotal();
     setTotal(totalCalculado);
   }, [itemCart]);
-
   return (
     <div className="container__cart">
       <h1>

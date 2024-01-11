@@ -89,7 +89,7 @@ function NavBar() {
             }
             onClick={navToggle}
           >
-            sobre
+            Sobre
           </NavLink>
         </motion.li>
         <motion.li

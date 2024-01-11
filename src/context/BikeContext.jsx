@@ -5,6 +5,10 @@ export const BikeContext = createContext();
 
 export const BikeProvider = ({ children }) => {
   const [itemCart, setItemCart] = useState(getItem("carrinho") || []);
+  const [openAlert, setOpenAlert] = useState(false);
+  const [severity, setSeverity] = useState("");
+  const [message, setMessage] = useState("");
+
   const handleValue = (valor) => {
     const valorNumero = parseFloat(valor.replace(",", "."));
     let resultado = Math.ceil(valorNumero / 6);
@@ -16,11 +20,28 @@ export const BikeProvider = ({ children }) => {
 
   const handleCart = (obj) => {
     if (itemCart.some((item) => item.id === obj.id)) {
-      alert("Este item já existe em seu carrinho!");
+      setOpenAlert(true);
+      setSeverity("info");
+      setMessage("Este item já existe em seu carrinho!");
       return;
     } else {
       setItemCart([...itemCart, obj]);
       setItem("carrinho", [...itemCart, obj]);
+      setOpenAlert(true);
+      setSeverity("success");
+      setMessage(" Item adicionado ao carrinho!");
+    }
+  };
+  const checkoutAlert = (alert) => {
+    if (alert === "success") {
+      setSeverity("success");
+      setMessage("Compra realizada com sucesso!");
+      setOpenAlert(true);
+    }
+    if (alert === "warning") {
+      setSeverity("warning");
+      setMessage("Selecione a forma de pagamento!");
+      setOpenAlert(true);
     }
   };
   return (
@@ -30,6 +51,11 @@ export const BikeProvider = ({ children }) => {
         setItemCart,
         handleCart,
         handleValue,
+        openAlert,
+        setOpenAlert,
+        severity,
+        message,
+        checkoutAlert,
       }}
     >
       {children}
