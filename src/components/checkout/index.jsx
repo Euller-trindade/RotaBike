@@ -3,8 +3,8 @@ import { FaPix, FaRegCreditCard, FaBarcode } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import "./style.css";
 import { BikeContext } from "../../context/BikeContext";
-import { Snackbar } from "@material-ui/core";
-import MuiAlert from "@material-ui/lab/Alert";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
 const Checkout = ({ setFormActive }) => {
   const [botaoAtivo, setBotaoAtivo] = useState(null);
@@ -106,9 +106,9 @@ const Checkout = ({ setFormActive }) => {
         anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         onClose={() => setOpenAlert(false)}
       >
-        <MuiAlert onClose={() => setOpenAlert(false)} severity={severity}>
+        <Alert onClose={() => setOpenAlert(false)} severity={severity}>
           {message}
-        </MuiAlert>
+        </Alert>
       </Snackbar>
     </motion.form>
   );

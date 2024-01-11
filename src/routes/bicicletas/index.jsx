@@ -7,8 +7,8 @@ import { BsCartPlusFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Loading from "../../components/loading";
-import { Snackbar } from "@material-ui/core";
-import MuiAlert from "@material-ui/lab/Alert";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
 const Bicicletas = () => {
   const [loading, setLoading] = useState(true);
@@ -89,9 +89,9 @@ const Bicicletas = () => {
         anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         onClose={handleClose}
       >
-        <MuiAlert onClose={handleClose} severity={severity}>
+        <Alert onClose={handleClose} severity={severity}>
           {message}
-        </MuiAlert>
+        </Alert>
       </Snackbar>
     </div>
   );
