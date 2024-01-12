@@ -1,7 +1,6 @@
 import React from "react";
 import { MdOutlineDirectionsBike, MdEmail, MdPhone } from "react-icons/md";
 import "./style.css";
-import imgPagamento from "../../assets/metodos de pagamento.png";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -9,10 +8,7 @@ const Footer = () => {
         {" "}
         RotaBike <MdOutlineDirectionsBike />
       </h2>
-      <div className="divs__footer">
-        <h3>Métodos de pagamento</h3>
-        <img src={imgPagamento} alt="" />
-      </div>
+
       <div className="divs__footer">
         <h3>Contato</h3>
         <p>
