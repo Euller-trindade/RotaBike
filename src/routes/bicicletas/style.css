@@ -68,11 +68,8 @@
   color: #fff;
   transition: all 0.3s ease;
 }
-.card__button button:hover {
-  background-color: #124800;
-}
-.btn__comprar {
-  border-right: 2px solid #fff !important;
+#btn__comprar {
+  background-color: #000000;
 }
 .card__button a {
   text-decoration: none;

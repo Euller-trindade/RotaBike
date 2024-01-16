@@ -3,6 +3,8 @@
   margin-bottom: 200px;
 }
 .container__home {
+  margin: 0 auto;
+  max-width: 1200px;
   padding: 50px;
 }
 .section__home {

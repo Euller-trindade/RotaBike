@@ -73,7 +73,7 @@ li {
 .nav__menu {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  padding: 40px 0;
   gap: 3rem;
 }
 .nav__toggler {
@@ -104,7 +104,7 @@ li {
     top: 10vh;
     right: 0;
     height: 90vh;
-    width: 80vw;
+    width: 100%;
     flex-direction: column;
     transform: translateY(100%);
     transition: 0.5s ease-in;

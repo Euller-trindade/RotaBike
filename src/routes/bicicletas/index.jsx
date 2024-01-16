@@ -27,7 +27,6 @@ const Bicicletas = () => {
   const handleClose = () => {
     setOpenAlert(false);
   };
-
   const handleBtnComprar = (bike) => {
     if (itemCart.some((item) => item.id !== bike.id)) {
       navigate("/cart");
@@ -40,7 +39,6 @@ const Bicicletas = () => {
       setLoading(false);
     }, 2000);
   }, []);
-
   return (
     <div className="container__bicicletas">
       {loading ? (
@@ -54,7 +52,7 @@ const Bicicletas = () => {
         >
           {data.map((bike) => (
             <div key={bike.id} className="card">
-              <img src={bike.foto} alt="" />
+              <img src={bike.foto} alt={bike.nome} draggable={false} />
               <h1>{bike.nome}</h1>
               <p className="price">
                 R$
@@ -70,7 +68,7 @@ const Bicicletas = () => {
               <h4>Frete grátis</h4>
               <div className="card__button">
                 <button
-                  className="btn__comprar"
+                  id="btn__comprar"
                   onClick={() => handleBtnComprar(bike)}
                 >
                   <Link>Comprar</Link>
