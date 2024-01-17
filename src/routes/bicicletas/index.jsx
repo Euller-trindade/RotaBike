@@ -28,9 +28,7 @@ const Bicicletas = () => {
     setOpenAlert(false);
   };
   const handleBtnComprar = (bike) => {
-    if (itemCart.some((item) => item.id !== bike.id)) {
-      navigate("/cart");
-    }
+    navigate("/cart");
     handleCart(bike);
     setOpenAlert(false);
   };

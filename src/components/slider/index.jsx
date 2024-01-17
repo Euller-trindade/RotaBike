@@ -2,7 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import "./style.css";
-import slide1 from "../../assets/slide1.png";
+import slide1 from "../../assets/slide1.jpg";
 import slide2 from "../../assets/slide2.webp";
 import slide3 from "../../assets/slide3.jpg";
 import slide4 from "../../assets/slide4.webp";
