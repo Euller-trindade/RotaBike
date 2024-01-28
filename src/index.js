@@ -15,6 +15,7 @@ import "swiper/css/scrollbar";
 import "swiper/css/pagination";
 import Cart from "./routes/cart";
 import { BikeProvider } from "./context/BikeContext";
+import BikeDetails from "./routes/bikeDetails";
 register();
 
 const router = createBrowserRouter([
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/details/:id",
+        element: <BikeDetails />,
       },
     ],
   },

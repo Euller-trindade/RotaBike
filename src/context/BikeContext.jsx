@@ -6,6 +6,7 @@ export const BikeContext = createContext();
 export const BikeProvider = ({ children }) => {
   const [itemCart, setItemCart] = useState(getItem("carrinho") || []);
   const [openAlert, setOpenAlert] = useState(false);
+  const [formActive, setFormActive] = useState(false);
   const [severity, setSeverity] = useState("");
   const [message, setMessage] = useState("");
 
@@ -56,6 +57,8 @@ export const BikeProvider = ({ children }) => {
         severity,
         message,
         checkoutAlert,
+        formActive,
+        setFormActive,
       }}
     >
       {children}

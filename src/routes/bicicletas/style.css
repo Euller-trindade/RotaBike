@@ -13,10 +13,12 @@
 .container__card {
   display: flex;
   padding: 0 10px;
+  max-width: 1700px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  user-select: none;
 }
 .card {
   display: flex;
@@ -27,6 +29,11 @@
   background-color: #f3f3f3;
   width: 220px;
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
 }
 .card h1 {
   display: flex;
@@ -62,14 +69,16 @@
 .card__button button {
   width: 100%;
   border: none;
-  background-color: #79d904;
   padding: 10px 0;
   cursor: pointer;
   color: #fff;
   transition: all 0.3s ease;
 }
-#btn__comprar {
+.btn__comprar {
   background-color: #000000;
+}
+.btn_cart {
+  background-color: #79d904;
 }
 .card__button a {
   text-decoration: none;
@@ -79,9 +88,14 @@
 .card__button svg {
   font-size: 1.2rem;
 }
-@media (max-width: 1050px) {
+@media (min-width: 1280px) {
   .card {
-    width: 195px;
+    width: 18%;
+  }
+}
+@media (max-width: 1080px) {
+  .card {
+    width: 199px;
   }
   .card h1 {
     font-size: 0.8rem;

@@ -14,16 +14,19 @@ const Bicicletas = () => {
   const [loading, setLoading] = useState(true);
 
   const {
-    itemCart,
     handleCart,
     handleValue,
     openAlert,
     setOpenAlert,
     severity,
     message,
+    setFormActive,
   } = useContext(BikeContext);
 
   const navigate = useNavigate();
+  const detailsBike = (id) => {
+    navigate(`/details/${id}`);
+  };
   const handleClose = () => {
     setOpenAlert(false);
   };
@@ -36,7 +39,9 @@ const Bicicletas = () => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
+    setFormActive(false);
   }, []);
+
   return (
     <div className="container__bicicletas">
       {loading ? (
@@ -49,7 +54,11 @@ const Bicicletas = () => {
           className="container__card"
         >
           {data.map((bike) => (
-            <div key={bike.id} className="card">
+            <div
+              key={bike.id}
+              className="card"
+              onClick={() => detailsBike(bike.id)}
+            >
               <img src={bike.foto} alt={bike.nome} draggable={false} />
               <h1>{bike.nome}</h1>
               <p className="price">
@@ -66,12 +75,12 @@ const Bicicletas = () => {
               <h4>Frete grátis</h4>
               <div className="card__button">
                 <button
-                  id="btn__comprar"
+                  className="btn__comprar"
                   onClick={() => handleBtnComprar(bike)}
                 >
                   <Link>Comprar</Link>
                 </button>
-                <button onClick={() => handleCart(bike)}>
+                <button className="btn_cart" onClick={() => handleCart(bike)}>
                   <BsCartPlusFill />
                 </button>
               </div>

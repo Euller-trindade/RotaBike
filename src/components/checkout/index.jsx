@@ -6,10 +6,16 @@ import { BikeContext } from "../../context/BikeContext";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
-const Checkout = ({ setFormActive }) => {
+const Checkout = () => {
   const [botaoAtivo, setBotaoAtivo] = useState(null);
-  const { message, severity, openAlert, setOpenAlert, checkoutAlert } =
-    useContext(BikeContext);
+  const {
+    message,
+    severity,
+    openAlert,
+    setOpenAlert,
+    checkoutAlert,
+    setFormActive,
+  } = useContext(BikeContext);
   const handleBotaoAtivo = (botao) => {
     if (botao === botaoAtivo) {
       setBotaoAtivo(null);

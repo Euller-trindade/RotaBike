@@ -1,0 +1,185 @@
+.container__details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 100px 20px;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  gap: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 50px 20px;
+}
+.images {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.mini__img {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.mini__img img {
+  background-color: #ededed;
+  border: 1px solid #d1d1d1;
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  object-fit: contain;
+  cursor: pointer;
+}
+.details__img img {
+  background-color: #efefef;
+  width: 320px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+}
+.details__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.details__info h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+.vendas__estoque {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 87px;
+  font-size: 0.8rem;
+}
+.estoque {
+  font-weight: 700;
+}
+.vendas {
+  color: #676767;
+  font-weight: 700;
+}
+.details__total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.details__parcelas {
+  font-size: 0.8rem;
+  color: #676767;
+  margin-bottom: 20px;
+}
+.devolucao {
+  margin-bottom: 15px;
+}
+.devolucao h3 {
+  font-size: 0.9rem;
+  color: #238d00;
+}
+.devolucao p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #676767;
+}
+.details__comprar {
+  display: flex;
+  width: 100%;
+}
+.details__comprar p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.details__comprar input {
+  width: 50px;
+  height: 30px;
+  border-radius: 3px;
+}
+.details__quantidade {
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+}
+.details__quantidade p {
+  position: relative;
+  top: 20%;
+  left: 10px;
+  margin-right: 20px;
+}
+.details__quantidade button {
+  border-radius: 0;
+  border: 1px solid #d1d1d1;
+  transition: all 0.5s ease;
+}
+.details__quantidade button:hover {
+  cursor: pointer;
+  background-color: #676767;
+  border: 1px solid #676767;
+}
+.details__quantidade div {
+  display: flex;
+  flex-direction: column;
+}
+.details__btnComprar {
+  flex: 1;
+  padding: 10px;
+  width: 85%;
+  border-radius: 5px;
+  border: none;
+  background-color: #79d904;
+  color: #ffffff;
+  margin-left: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.descricao h2 {
+  color: #79d904;
+  margin-bottom: 10px;
+}
+@media (max-width: 840px) {
+  .images {
+    justify-content: center;
+  }
+  .details {
+    flex-direction: column;
+  }
+  .details__img img {
+    object-fit: contain;
+    width: 500px;
+  }
+}
+@media (max-width: 670px) {
+  .images {
+    flex-direction: column-reverse;
+  }
+  .details__img {
+    display: flex;
+    justify-content: center;
+    background-color: #efefef;
+    width: 320px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 5px;
+    border: 1px solid #d1d1d1;
+  }
+  .details__img img {
+    border: none;
+    width: 100%;
+    height: 100%;
+  }
+  .mini__img {
+    flex-direction: row;
+  }
+  .mini__img img {
+    width: 50px;
+    height: 50px;
+  }
+}

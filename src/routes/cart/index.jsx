@@ -10,8 +10,8 @@ import { useNavigate } from "react-router-dom";
 import Checkout from "../../components/checkout";
 
 const Cart = () => {
-  const [formActive, setFormActive] = useState(false);
-  const { itemCart, setItemCart } = useContext(BikeContext);
+  const { itemCart, setItemCart, formActive, setFormActive } =
+    useContext(BikeContext);
   const [total, setTotal] = useState([]);
   const navigate = useNavigate();
 
@@ -56,13 +56,16 @@ const Cart = () => {
     const totalCalculado = calcularTotal();
     setTotal(totalCalculado);
   }, [itemCart]);
+  useEffect(() => {
+    setFormActive(false);
+  }, []);
   return (
     <div className="container__cart">
       <h1>
         <MdOutlineShoppingCart /> Carrinho de compras
       </h1>
       {formActive ? (
-        <Checkout setFormActive={setFormActive} />
+        <Checkout />
       ) : itemCart.length === 0 ? (
         <div className="not__items">
           <h2>
