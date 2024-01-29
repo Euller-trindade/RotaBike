@@ -53,7 +53,7 @@ const BikeDetails = () => {
               <p
                 className="estoque"
                 style={
-                  selectedBike.estoque ? { color: "#238d00" } : { color: "red" }
+                  selectedBike.estoque ? { color: "#79d904" } : { color: "red" }
                 }
               >
                 {selectedBike.estoque ? "Em estoque" : "Indisponível"}

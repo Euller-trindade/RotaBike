@@ -9,7 +9,7 @@
 .details {
   display: flex;
   flex-wrap: wrap;
-  max-width: 900px;
+  max-width: 1200px;
   gap: 20px;
   background-color: #ffffff;
   border-radius: 5px;
@@ -34,13 +34,15 @@
   object-fit: contain;
   cursor: pointer;
 }
+.details__img {
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+}
 .details__img img {
   background-color: #efefef;
   width: 320px;
   height: 300px;
   object-fit: contain;
-  border-radius: 5px;
-  border: 1px solid #d1d1d1;
 }
 .details__info {
   display: flex;
@@ -83,7 +85,7 @@
 }
 .devolucao h3 {
   font-size: 0.9rem;
-  color: #238d00;
+  color: #79d904;
 }
 .devolucao p {
   font-size: 0.8rem;
@@ -144,6 +146,11 @@
   color: #79d904;
   margin-bottom: 10px;
 }
+@media (max-width: 985px) {
+  .vendas__estoque {
+    margin-bottom: 50px;
+  }
+}
 @media (max-width: 840px) {
   .images {
     justify-content: center;
@@ -151,29 +158,42 @@
   .details {
     flex-direction: column;
   }
+  .details__img {
+    position: absolute;
+    height: 300px;
+  }
   .details__img img {
+    position: relative;
+    top: 23%;
     object-fit: contain;
     width: 500px;
+    height: 200px;
+  }
+  .details__quantidade p {
+    top: 35%;
+  }
+  .details__quantidade button {
+    padding: 5px;
   }
 }
 @media (max-width: 670px) {
+  .details {
+    padding: 20px;
+  }
   .images {
     flex-direction: column-reverse;
   }
   .details__img {
-    display: flex;
-    justify-content: center;
     background-color: #efefef;
     width: 320px;
-    height: 200px;
+    height: 300px;
     object-fit: contain;
-    border-radius: 5px;
-    border: 1px solid #d1d1d1;
   }
   .details__img img {
+    top: 10%;
     border: none;
     width: 100%;
-    height: 100%;
+    height: 80%;
   }
   .mini__img {
     flex-direction: row;
@@ -181,5 +201,34 @@
   .mini__img img {
     width: 50px;
     height: 50px;
+  }
+  .vendas__estoque {
+    margin-bottom: 20px;
+  }
+  .details__info h1 {
+    font-size: 1.6rem;
+  }
+  .descricao h2 {
+    font-size: 1rem;
+  }
+  .descricao p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 400px) {
+  .container__details {
+    padding: 100px 0;
+  }
+  .details {
+    border-radius: 0;
+  }
+  .details__img {
+    height: 200px;
+  }
+  .details__info h1 {
+    font-size: 1.5rem;
+  }
+  .details__total {
+    font-size: 1.2rem;
   }
 }
