@@ -57,7 +57,7 @@ const Checkout = () => {
         <input type="text" placeholder="Cidade" required />
       </div>
       <div className="container__campos">
-        <input type="text" placeholder="Barrio" required />
+        <input type="text" placeholder="Bairro" required />
       </div>
       <div className="container__campos">
         <input type="text" placeholder="Rua" required />
