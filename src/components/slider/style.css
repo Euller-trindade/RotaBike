@@ -18,3 +18,13 @@
   font-size: 2rem;
   color: #79d904;
 }
+@media (max-width: 480px) {
+  .description {
+    display: flex;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    top: 80%;
+    left: 1rem;
+    font-size: 1.2rem;
+  }
+}
