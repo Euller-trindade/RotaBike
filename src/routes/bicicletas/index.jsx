@@ -54,25 +54,23 @@ const Bicicletas = () => {
           className="container__card"
         >
           {data.map((bike) => (
-            <div
-              key={bike.id}
-              className="card"
-              onClick={() => detailsBike(bike.id)}
-            >
-              <img src={bike.foto} alt={bike.nome} draggable={false} />
-              <h1>{bike.nome}</h1>
-              <p className="price">
-                R$
-                {parseFloat(bike.valor).toLocaleString("pt-BR", {
-                  maximumFractionDigits: 2,
-                })}
-                ,00
-                <br />
-              </p>
-              <p className="parcelas">
-                Em até 6x R${handleValue(bike.valor)},00
-              </p>
-              <h4>Frete grátis</h4>
+            <div key={bike.id} className="card">
+              <div onClick={() => detailsBike(bike.id)} className="card__div">
+                <img src={bike.foto} alt={bike.nome} draggable={false} />
+                <h1>{bike.nome}</h1>
+                <p className="price">
+                  R$
+                  {parseFloat(bike.valor).toLocaleString("pt-BR", {
+                    maximumFractionDigits: 2,
+                  })}
+                  ,00
+                  <br />
+                </p>
+                <p className="parcelas">
+                  Em até 6x R${handleValue(bike.valor)},00
+                </p>
+                <h4>Frete grátis</h4>
+              </div>
               <div className="card__button">
                 <button
                   className="btn__comprar"
