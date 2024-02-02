@@ -136,7 +136,6 @@
   }
   .card__button button {
     padding: 5px 0;
-    margin-top: -10px;
   }
 }
 @media (max-width: 480px) {
