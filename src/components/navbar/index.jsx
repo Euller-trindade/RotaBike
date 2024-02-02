@@ -5,12 +5,14 @@ import { MdOutlineDirectionsBike, MdOutlineShoppingCart } from "react-icons/md";
 import "./style.css";
 import { BikeContext } from "../../context/BikeContext";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("nav__menu");
   const [icon, setIcon] = useState("nav__toggler");
   const { itemCart } = useContext(BikeContext);
+  const navigate = useNavigate();
   const navToggle = () => {
     if (active === "nav__menu") {
       setActive("nav__menu nav__active");
@@ -37,6 +39,7 @@ function NavBar() {
   return (
     <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
       <motion.h2
+        onClick={() => navigate("/")}
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
